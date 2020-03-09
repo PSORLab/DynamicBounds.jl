@@ -6,7 +6,6 @@ using DocStringExtensions, Reexport
 @reexport using DynamicBoundspODEs
 @reexport using DynamicBoundspODEsIneq
 
-
 #=
 using FunctionWrappers: FunctionWrapper
 using OrdinaryDiffEq: OrdinaryDiffEqAlgorithm
