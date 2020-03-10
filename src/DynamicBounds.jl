@@ -3,7 +3,6 @@ module DynamicBounds
 using DocStringExtensions, Reexport
 
 @reexport using DynamicBoundsBase
-@reexport using DynamicBoundspODEs
 @reexport using DynamicBoundspODEsIneq
 
 #=
