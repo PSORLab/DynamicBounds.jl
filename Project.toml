@@ -7,13 +7,11 @@ version = "0.1.0"
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
 DynamicBoundsBase = "890bb398-7f8e-4565-ac8e-279ab2833f68"
 DynamicBoundspODEsIneq = "8922cf73-a24a-4c59-b2b7-455e840875f0"
-Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
 
 [compat]
 DocStringExtensions = "~0.8"
 DynamicBoundsBase = "0.1.0"
 DynamicBoundspODEsIneq = "0.1"
-Reexport = "~0.2"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

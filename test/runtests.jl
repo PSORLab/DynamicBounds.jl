@@ -1,6 +1,7 @@
 #!/usr/bin/env julia
 
 using Test, DynamicBounds
+const DEqR = DynamicBounds
 
 @testset "Integrator Attributes Interface" begin
 
