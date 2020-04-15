@@ -7,7 +7,7 @@ include("reexport_using.jl")
 @reexport using DynamicBoundsBase: HasStateBounds, HasConstantStateBounds, HasVariableStateBounds,
        HasUserJacobian, ConstantStateBounds, VariableStateBounds,
        PolyhedralConstraint, AbstractDERelaxProblem, AbstractRelaxProblemAttribute,
-       NOMINAL, LOWER, UPPER, UNDEFINED, IntegratorName, Value, Gradient,
+       Nominal, Lower, Upper, Undefined, IntegratorName, Value, Gradient,
        Subgradient, Bound, Relaxation,IsNumeric, IsSolutionSet, TerminationStatus,
        ParameterValue, ParameterBound, SupportSet, TerminationStatusCode, relax!,
        integrate!, make, AbstractDERelaxIntegator, AbstractODERelaxIntegator,
