@@ -1,5 +1,9 @@
 # DiffEqRelax.jl: Validated Bounds and Relaxations of Differential Equations [WIP]
 
+| **Linux/OS**                                                                     | **Windows**                                                                     | **Coverage**                                                |
+|:-----------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
+| [![Build Status](https://travis-ci.com/PSORLab/DynamicBounds.jl.svg?branch=master)](https://travis-ci.com/PSORLab/DynamicBounds.jl) | [![Build status](https://ci.appveyor.com/api/projects/status/oepm4k107c6xserc/branch/master?svg=true)](https://ci.appveyor.com/project/mewilhel/dynamicbounds-jl/branch/master) | [![Coverage Status](https://coveralls.io/repos/github/PSORLab/DynamicBounds.jl/badge.svg?branch=master)](https://coveralls.io/github/PSORLab/DynamicBounds.jl?branch=master) |
+
 This package provides
 An abstraction layer for constructing valid relaxations
 and bounds on the solution sets (and numerical solutions of) parametric ODEs,
