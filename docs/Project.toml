@@ -1,0 +1,4 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+DynamicBounds = "734901b1-590a-5f47-85e0-724a0ec3af09"
+DynamicBoundsBase = "890bb398-7f8e-4565-ac8e-279ab2833f68"
