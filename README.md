@@ -1,4 +1,4 @@
-# DiffEqRelax.jl: Validated Bounds and Relaxations of Differential Equations
+# DiffEqRelax.jl: Validated Bounds and Relaxations of Differential Equations [WIP]
 
 This package provides
 An abstraction layer for constructing valid relaxations
