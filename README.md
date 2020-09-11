@@ -1,4 +1,8 @@
-# DiffEqRelax.jl: Validated Bounds and Relaxations of Differential Equations [WIP]
+# DynamicBounds.jl: Validated Bounds and Relaxations of Differential Equations [WIP]
+
+| **Linux/OS/Windows**                                                                     | **Coverage**                                             |                       
+|:--------------------------------------------------------------------------------:|:-------------------------------------------------------:|
+| [![Build Status](https://travis-ci.org/PSORLab/DynamicBounds.jl.svg?branch=master)](https://travis-ci.org/PSORLab/DynamicBounds.jl) | [![Coverage Status](https://coveralls.io/repos/github/PSORLab/DynamicBounds.jl/badge.svg?branch=master)](https://coveralls.io/github/PSORLab/DynamicBounds.jl?branch=master) |    
 
 This package provides
 An abstraction layer for constructing valid relaxations
@@ -9,9 +13,9 @@ DifferentialEquations.jl.
 
 ## Example Usage
 
-## The DiffEqRelax.jl abstraction layer.
+## The DynamicBounds.jl abstraction layer.
 
-The abstraction layer for DiffEqRelax is divided into three major parts. First, there are problems (`<:`) which hold all the information required to define a well-posed parametric differential equation problem. Second, there are integrators (`<:`) which hold all the information require to compute relaxations of the problem or `integrate` the parametric differential equation problem at a particular parameter value.
+The abstraction layer for DynamicBounds is divided into three major parts. First, there are problems (`<:`) which hold all the information required to define a well-posed parametric differential equation problem. Second, there are integrators (`<:`) which hold all the information require to compute relaxations of the problem or `integrate` the parametric differential equation problem at a particular parameter value.
 
 ## Integrators available
 
