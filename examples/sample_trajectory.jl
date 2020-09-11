@@ -28,8 +28,7 @@ xL = zeros(6)
 xU = [34.0; 20.0; 20.0; 34.0; 16.0; 16.0]
 set!(prob, ConstantStateBounds(xL,xU))
 
-Scott2013(prob, calculate_relax = false, calculate_subgradient = false)
-integrator = Scott2013(prob, calculate_relax = false, calculate_subgradient = false)
+integrator = DifferentialInequality(prob, calculate_relax = false, calculate_subgradient = false)
 
 relax!(integrator)
 
