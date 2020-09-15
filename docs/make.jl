@@ -9,7 +9,6 @@ import DynamicBoundsBase: AbstractPathConstraint, Bound, Relaxation, Gradient, S
 import DynamicBoundspODEsIneq: LocalProblemStorage, DifferentialInequalityCond, DifferentialInequalityAffect,
                                DifferentialInequalityAffectNeg, DifferentialInequalityf, DifferentialInequality
 
-
 import DynamicBoundspODEsDiscrete: jetcoeffs!, TaylorFunctor!, JacTaylorFunctor!, jacobian_taylor_coeffs!,
                                    set_JxJp!, LohnersFunctor, HermiteObreschkoffFunctor, QRDenseStorage,
                                    calculateQ!, calculateQinv!, μ!, ρ!, AbstractStateContractorName,
@@ -25,6 +24,7 @@ makedocs(modules = [DynamicBounds, DynamicBoundsBase, DynamicBoundspODEsIneq, Dy
          authors = "Matthew Wilhelm",
          sitename = "DynamicBounds.jl: Nonlinear Interval Bounds and State Relaxations of Differential Equations",
          pages = ["Introduction" => "index.md",
+                  "Getting Started" => "getting_started.md",
                   "DynamicsBoundsBase, An extendable abstraction layer" => "Base/Base.md",
                   "Discrete-Time Differential Relaxations" => "pODEsDiscrete/pODEsDiscrete.md",
                   "Continuous-Time Differential Relaxations" => "pODEsIneq/pODEsIneq.md",

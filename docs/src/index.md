@@ -19,9 +19,6 @@ pkg> add DynamicBounds
 - **DynamicBoundspODEsIneq.jl**: An implementation of the continuous-time differential inequality algorithms for constructing interval state bounds and state relaxations of parametric ordinary differential equation systems (pODEs).
 - **DynamicBoundspODEsDiscrete.jl**: An implementation of various discrete-time algorithms (Hermite-Obreschkoff, Lohner's Method, e.g.) for constructing interval state bounds and state relaxations of parametric ordinary differential equation systems (pODEs)
 
-## Basic Usage
-
-
 ## Citing DynamicBounds.jl
 
 A paper about the DynamicBounds.jl software package is currently under preparation. In the

@@ -1,19 +1,21 @@
-# **DynamicBoundspODEsDiscrete.jl**: Discerete-time relaxations/bounds of nonlinear parametric differential equations
+# **DynamicBoundspODEsDiscrete.jl**: Discrete-time relaxations/bounds of nonlinear parametric differential equations
 
+This package contains a number of algorithms that computes relaxations via a series
+of sequential steps. The main integrator exported is the `DiscretizeRelax` integrator.
+This computes bounds or relaxations (and (sub)gradients thereof) using a two-step routine: 1) a first step determining a step-size such that the solution of the pODEs is proven to
+exist over the entire step [tj-1, tj] and 2) a secondary contractor method which refines the bounds/relaxations at time tj. This integrator is initialize in the standard fashion. See the next two sections for keyword arguments and valid state contractors.
 
 ## Integrator used for constructing continuous time differential inequality bounds/relaxations.
 ```@docs
 DiscretizeRelax
 ```
 
-## Options for discretize-and-relaxation style calculations
+## Contractor options for discretize-and-relaxation style calculations
 ```@docs
 AbstractStateContractorName
 LohnerContractor{K}
 HermiteObreschkoff
 ```
-
-## Utilities
 
 ### Computation of Taylor Functions and Jacobians
 ```@docs
