@@ -9,6 +9,11 @@ import DynamicBoundsBase: AbstractPathConstraint, Bound, Relaxation, Gradient, S
 import DynamicBoundspODEsIneq: LocalProblemStorage, DifferentialInequalityCond, DifferentialInequalityAffect,
                                DifferentialInequalityAffectNeg, DifferentialInequalityf, DifferentialInequality
 
+
+import DynamicBoundspODEsDiscrete: jetcoeffs!, TaylorFunctor!, JacTaylorFunctor!, jacobian_taylor_coeffs!, 
+                                   set_JxJp!, LohnersFunctor, QRDenseStorage, calculateQ!, calculateQinv!,
+                                   reinitialize, qr_stack
+
 makedocs(modules = [DynamicBounds, DynamicBoundsBase, DynamicBoundspODEsIneq, DynamicBoundspODEsDiscrete],
          doctest = false,
          format = Documenter.HTML(),

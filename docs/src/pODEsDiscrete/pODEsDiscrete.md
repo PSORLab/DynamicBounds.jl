@@ -21,6 +21,7 @@ TaylorFunctor!
 JacTaylorFunctor!
 jacobian_taylor_coeffs!
 set_JxJp!
+LohnersFunctor
 ```
 
 ### Storage and Access functions for Preconditioners
@@ -30,5 +31,27 @@ QRDenseStorage
 QRDenseStorage(nx::Int)
 calculateQ!
 calculateQinv!
-reinitialize!(x::CircularBuffer{QRDenseStorage})
+reinitialize!::Tuple{DataStructures.CircularBuffer{QRDenseStorage}}
+mul_split!
+```
+
+### Existence and Uniqueness Test Utility Functions
+```@docs
+improvement_condition
+contains
+excess_error
+ExistStorage{F,K,S,T}
+```
+
+### Utilities for overall discretize-and-relaxation scheme
+```@docs
+StepParams
+StepResult{S}
+ContractorStorage{S}
+single_step!
+affine_contract!
+set_xX!
+set_P!
+compute_X0!
+set_Δ!
 ```
