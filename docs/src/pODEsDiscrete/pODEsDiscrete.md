@@ -19,8 +19,6 @@ HermiteObreschkoff
 ```@docs
 jetcoeffs!
 TaylorFunctor!
-μ!(out,xⱼ,x̂ⱼ,η)
-ρ!(out,p,p̂ⱼ,η)
 JacTaylorFunctor!
 jacobian_taylor_coeffs!
 set_JxJp!
