@@ -10,9 +10,14 @@ import DynamicBoundspODEsIneq: LocalProblemStorage, DifferentialInequalityCond, 
                                DifferentialInequalityAffectNeg, DifferentialInequalityf, DifferentialInequality
 
 
-import DynamicBoundspODEsDiscrete: jetcoeffs!, TaylorFunctor!, JacTaylorFunctor!, jacobian_taylor_coeffs!, 
-                                   set_JxJp!, LohnersFunctor, QRDenseStorage, calculateQ!, calculateQinv!,
-                                   reinitialize, qr_stack
+import DynamicBoundspODEsDiscrete: jetcoeffs!, TaylorFunctor!, JacTaylorFunctor!, jacobian_taylor_coeffs!,
+                                   set_JxJp!, LohnersFunctor, HermiteObreschkoffFunctor, QRDenseStorage,
+                                   calculateQ!, calculateQinv!, μ!, ρ!, AbstractStateContractorName,
+                                   reinitialize, qr_stack, StepParams, StepResult, ExistStorage,
+                                   ContractorStorage, reinitialize!, existence_uniqueness!, improvement_condition,
+                                   single_step!, set_xX!, state_contractor_steps, state_contractor_γ,
+                                   state_contractor_k, excess_error, set_Δ!, compute_X0!, set_P!, excess_error,
+                                   contains, calc_alpha, mul_split!
 
 makedocs(modules = [DynamicBounds, DynamicBoundsBase, DynamicBoundspODEsIneq, DynamicBoundspODEsDiscrete],
          doctest = false,

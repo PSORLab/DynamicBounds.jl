@@ -8,7 +8,8 @@ DiscretizeRelax
 
 ## Options for discretize-and-relaxation style calculations
 ```@docs
-LohnerContractor
+AbstractStateContractorName
+LohnerContractor{K}
 HermiteObreschkoff
 ```
 
@@ -18,10 +19,13 @@ HermiteObreschkoff
 ```@docs
 jetcoeffs!
 TaylorFunctor!
+μ!(out,xⱼ,x̂ⱼ,η)
+ρ!(out,p,p̂ⱼ,η)
 JacTaylorFunctor!
 jacobian_taylor_coeffs!
 set_JxJp!
 LohnersFunctor
+HermiteObreschkoffFunctor
 ```
 
 ### Storage and Access functions for Preconditioners
@@ -31,7 +35,6 @@ QRDenseStorage
 QRDenseStorage(nx::Int)
 calculateQ!
 calculateQinv!
-reinitialize!::Tuple{DataStructures.CircularBuffer{QRDenseStorage}}
 mul_split!
 ```
 
@@ -40,7 +43,11 @@ mul_split!
 improvement_condition
 contains
 excess_error
+calc_alpha
 ExistStorage{F,K,S,T}
+state_contractor_k
+state_contractor_γ
+state_contractor_steps
 ```
 
 ### Utilities for overall discretize-and-relaxation scheme
@@ -49,9 +56,8 @@ StepParams
 StepResult{S}
 ContractorStorage{S}
 single_step!
-affine_contract!
 set_xX!
-set_P!
-compute_X0!
+set_P!(d::DiscretizeRelax)
+compute_X0!(d::DiscretizeRelax)
 set_Δ!
 ```
