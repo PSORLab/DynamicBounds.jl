@@ -19,6 +19,16 @@ module pDELib
 const PROTECTED_LIBS = ["PerezGalvan2017", "Sahlodin2011", "Scott2013",
                         "Shen2017", "Wilhelm2019"]
 
+const STANDARD_LIBRARY = LibraryProblem[]
+
+function reinitialize_standard_lib!()
+    for folder in PROTECTED_LIBS
+        include("")
+        lib_prob = LibraryProblem(prob, id = id, desc = desc, source = source, url = url)
+        push!(pDELib.STANDARD_LIBRARY, lib_prob)
+    end
+end
+
 pdelib_dir = joinpath(dirname(pathof(DiffEqRelax)), "library", "..")
 
 """
