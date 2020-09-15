@@ -10,8 +10,8 @@ DynamicBoundspODEsIneq = "8922cf73-a24a-4c59-b2b7-455e840875f0"
 
 [compat]
 DocStringExtensions = "~0.8"
-DynamicBoundsBase = "0.3.0"
-DynamicBoundspODEsIneq = "0.3"
+DynamicBoundsBase = "~0.3"
+DynamicBoundspODEsIneq = "~0.3"
 julia = "~1.2, ~1.3, ~1.4, ~1.5"
 
 [extras]
