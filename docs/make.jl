@@ -2,7 +2,14 @@ push!(LOAD_PATH,"../src/")
 
 using Documenter, DynamicBounds, DynamicBoundsBase, DynamicBoundspODEsIneq, DynamicBoundspODEsDiscrete
 
-makedocs(modules = [DynamicBounds, DynamicBoundsBase],
+import DynamicBoundsBase: AbstractPathConstraint, Bound, Relaxation, Gradient, Subgradient, get,
+                          ODERelaxProb, getall, UnsupportedError, NotAllowedError, UnsupportedRelaxAttribute,
+                          SetRelaxAttributeNotAllowed, AbstractODERelaxProblem
+
+import DynamicBoundspODEsIneq: LocalProblemStorage, DifferentialInequalityCond, DifferentialInequalityAffect,
+                               DifferentialInequalityAffectNeg, DifferentialInequalityf, DifferentialInequality
+
+makedocs(modules = [DynamicBounds, DynamicBoundsBase, DynamicBoundspODEsIneq, DynamicBoundspODEsDiscrete],
          doctest = false,
          format = Documenter.HTML(),
          authors = "Matthew Wilhelm",

@@ -1,3 +1,19 @@
+# Copyright (c) 2020: Matthew Wilhelm & Matthew Stuber.
+# This work is licensed under the Creative Commons Attribution-NonCommercial-
+# ShareAlike 4.0 International License. To view a copy of this license, visit
+# http://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative
+# Commons, PO Box 1866, Mountain View, CA 94042, USA.
+#############################################################################
+# DynamicBounds.jl
+# A package for compute bounds and relaxations of the solutions of
+# parametric differential equations.
+# See https://github.com/PSORLab/DynamicBoundsBase.jl
+#############################################################################
+# src/library.jl
+# A module containing the access functions and library utilities for the
+# library of relaxation problem benchmarks.
+#############################################################################
+
 module pDELib
 
 const PROTECTED_LIBS = ["PerezGalvan2017", "Sahlodin2011", "Scott2013",
