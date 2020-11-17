@@ -2,11 +2,7 @@
 
 | **Linux/OS/Windows**                                                                     | **Coverage**                                             |                       
 |:--------------------------------------------------------------------------------:|:-------------------------------------------------------:|
-| [![Build Status](https://travis-ci.org/PSORLab/DynamicBounds.jl.svg?branch=master)](https://travis-ci.org/PSORLab/DynamicBounds.jl) | [![Coverage Status](https://coveralls.io/repos/github/PSORLab/DynamicBounds.jl/badge.svg?branch=master)](https://coveralls.io/github/PSORLab/DynamicBounds.jl?branch=master) |    
-
-| **Linux/OS**                                                                     | **Windows**                                                                     | **Coverage**                                                |
-|:-----------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------:|
-| [![Build Status](https://travis-ci.com/PSORLab/DynamicBounds.jl.svg?branch=master)](https://travis-ci.com/PSORLab/DynamicBounds.jl) | [![Build status](https://ci.appveyor.com/api/projects/status/oepm4k107c6xserc/branch/master?svg=true)](https://ci.appveyor.com/project/mewilhel/dynamicbounds-jl/branch/master) | [![Coverage Status](https://coveralls.io/repos/github/PSORLab/DynamicBounds.jl/badge.svg?branch=master)](https://coveralls.io/github/PSORLab/DynamicBounds.jl?branch=master) |
+| [![Build Status](https://github.com/PSORLab/DynamicBounds.jl/workflows/CI/badge.svg?branch=master)](https://github.com/PSORLab/DynamicBounds.jl/actions?query=workflow%3ACI) | [![codecov](https://codecov.io/gh/PSORLab/DynamicBounds.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/PSORLab/DynamicBounds.jl) |    
 
 This package provides
 An abstraction layer for constructing valid relaxations
