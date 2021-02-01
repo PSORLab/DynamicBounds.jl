@@ -1,10 +1,10 @@
 # Reactor Separator Model
-PerezGalvan2017f_t0 = 0.0
-PerezGalvan2017f_tf = 100.0
-PerezGalvan2017f_pL = [0.0; 0.0]
-PerezGalvan2017f_pU = [0.08; 0.16]
-PerezGalvan2017f_x0(p) = [0.5; 0.0; 0.0; 0.0; p[1]; p[2]]
-function PerezGalvan2017f_f(du, u, p, t)
+id = :PerezGalvan2017f
+
+pL = [0.0; 0.0]
+pU = [0.08; 0.16]
+PerezGalvan2017f_x0(p::Vector{T}) where T = T[0.5; 0.0; 0.0; 0.0; p[1]; p[2]]
+function PerezGalvan2017f_f(du::Vector{T}, u::Vector{T}, p::Vector{T}, t) where T
     k = 0.06; xF0 = 0.0; D = 1.0; H = 63.33
     α = 7.5; B = 1.2; L = 1.704; F = 1.0
     V = pi*(H/4)*D^2    # THIS MAY BE INCORRECT...
@@ -21,5 +21,9 @@ function PerezGalvan2017f_f(du, u, p, t)
     du[6] = -(L + D)*u[6] + V*y5
     return
 end
-PerezGalvan2017f_id = :PerezGalvan2017f
-PerezGalvan2017f_desc = "Reactor Separator Model"
+tspan = (0.0, 100.0)
+
+prob = ODERelaxProb(PerezGalvan2017d_f!, tspan, PerezGalvan2017d_x0, pL, pU)
+url = "https://www.sciencedirect.com/science/article/abs/pii/S0098135417300923"
+source = "PerezGalvan2017"
+desc = "Reactor Separator Model"

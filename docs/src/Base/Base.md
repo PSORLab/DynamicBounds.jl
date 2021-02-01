@@ -1,13 +1,13 @@
 # **DynamicBoundsBase.jl**: An extensible abstraction layer for DynamicBounds
 
-A
+
 
 ## **Current supported problem types and constructors:**
 
 ```@docs
 AbstractDERelaxProblem
+AbstractODERelaxProblem
 ODERelaxProb{F,JX,JP,xType,K}
-ODERelaxProb(f, tspan, x0, pL, pU; kwargs...)
 ```
 
 ## Problem attributes
@@ -60,9 +60,15 @@ Gradient{T<:AbstractBoundLoc}
 Subgradient{T<:AbstractBoundLoc}
 ```
 
-The following constructors for integrator attributes are given below where `T<:AbstractBoundLoc`
+The following constructors for integrator attributes are given below with `T<:AbstractBoundLoc`. The `TimeIndex` constructor is used to specify that
+the time point referenced using an integer (i.e. the first, second, or fifth
+time in the support set). The subgradient of the concave relaxation at the
+third point in the support set is then referenced using the command `Subgradient{Upper}(TimeIndex(3))` whereas the subgradient of the concave
+relaxation at time `0.35` is referenced using `Subgradient{Upper}(0.35)`. A
+full list of the `AbstractIntegratorAttribute` structures using this
+constructor are list below:
 
-```@docs
+```julia
 Gradient{T}(i::TimeIndex)
 Gradient{T}(x::Float64)
 Subgradient{T}(i::TimeIndex)
@@ -89,9 +95,9 @@ integrate!
 ## General utilities:
 
 ```@docs
-  IntegratorStates
-  UnsupportedError
-  NotAllowedError
-  UnsupportedRelaxAttribute{AttrType<:AnyDEAttribute}
-  SetRelaxAttributeNotAllowed{AttrType<:AnyDEAttribute}
+IntegratorStates
+UnsupportedError
+NotAllowedError
+UnsupportedRelaxAttribute{AttrType<:AnyDEAttribute}
+SetRelaxAttributeNotAllowed{AttrType<:AnyDEAttribute}
 ```
