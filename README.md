@@ -1,8 +1,8 @@
-# DynamicBounds.jl: Validated Bounds and Relaxations of Differential Equations [WIP]
+# DynamicBounds.jl: Validated Bounds and Relaxations of Differential Equations
 
-| **Linux/OS/Windows**                                                                     | **Coverage**                                             |                       
-|:--------------------------------------------------------------------------------:|:-------------------------------------------------------:|
-| [![Build Status](https://github.com/PSORLab/DynamicBounds.jl/workflows/CI/badge.svg?branch=master)](https://github.com/PSORLab/DynamicBounds.jl/actions?query=workflow%3ACI) | [![codecov](https://codecov.io/gh/PSORLab/DynamicBounds.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/PSORLab/DynamicBounds.jl) |    
+| **Linux/OS/Windows**                                                                     | **Coverage**                                             | **Persistent DOI**                                             |                        
+|:--------------------------------------------------------------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------:|
+| [![Build Status](https://github.com/PSORLab/DynamicBounds.jl/workflows/CI/badge.svg?branch=master)](https://github.com/PSORLab/DynamicBounds.jl/actions?query=workflow%3ACI) | [![codecov](https://codecov.io/gh/PSORLab/DynamicBounds.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/PSORLab/DynamicBounds.jl) |  To Be Added (Zenodo)  |
 
 This package provides
 An abstraction layer for constructing valid relaxations
