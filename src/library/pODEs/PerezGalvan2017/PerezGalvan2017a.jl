@@ -1,13 +1,17 @@
 # First-order irreversible series reaction
-PerezGalvan2017a_t0 = 0.0
-PerezGalvan2017a_tf = 1.0
-PerezGalvan2017a_pL = [4.5; 0.2]
-PerezGalvan2017a_pU = [0.2; 1.8]
-PerezGalvan2017a_x0(p) = [1.0; 0.0]
-function PerezGalvan2017a_f(du, u, p, t)
+id = :PerezGalvan2017a
+
+pL = [4.5; 0.2]
+pU = [0.2; 1.8]
+PerezGalvan2017a_x0(p::Vector{T}) where T = T[one(T); zero(T)]
+function PerezGalvan2017a_f!(du::Vector{T}, u::Vector{T}, p::Vector{T}, t) where T
     du[1] = -p[1]*u[1]
     du[2] = p[1]*u[1] - p[2]*u[2]
     return
 end
-PerezGalvan2017a_id = :PerezGalvan2017A
-PerezGalvan2017a_desc = "First-order irreversible series reaction"
+tspan = (0.0, 1.0)
+
+prob = ODERelaxProb(PerezGalvan2017a_f!, tspan, PerezGalvan2017a_x0, pL, pU)
+url = "https://www.sciencedirect.com/science/article/abs/pii/S0098135417300923"
+source = "PerezGalvan2017"
+desc = "First-order irreversible series reaction"
