@@ -39,3 +39,10 @@ The abstraction layer for DynamicBounds is divided into three major parts. First
 ## References
 
 ## Related Packages
+- ReachabilityAnalysis.jl: A well-developed package in Julia for novel reachability
+approaches. There is some overlap between the functionality enclosed in this
+package and DynamicBounds.jl. Both packages provide methods for performing
+reachability analysis. However, DynamicBounds.jl is meant to provide a specialized
+interface to additionally query dynamic relaxations and supply optimization problems
+with a structured abstraction layer such that optimizers may be written in a
+reachability (or relaxation) algorithm agnostic fashion.
