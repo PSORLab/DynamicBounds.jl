@@ -30,7 +30,7 @@ include("reexport_using.jl")
 
 @reexport using DynamicBoundspODEsIneq: DifferentialInequality, DifferentialInequalityCond,
                                         DifferentialInequalityAffect, DifferentialInequalityAffectNeg,
-                                        DifferentialInequalityf, LocalProblemStorage
+                                        DifferentialInequalityf
 
 import DynamicBoundsBase
 const DBB = DynamicBoundsBase
@@ -48,12 +48,5 @@ end
 function DBB.get(m::DBB.AbstractDERelaxProblem, attr::DBB.AbstractRelaxProblemAttribute, args...)
     DBB.get(m, attr, args...)
 end
-#=
-using FunctionWrappers: FunctionWrapper
-using OrdinaryDiffEq: OrdinaryDiffEqAlgorithm
-using DifferentialEquations: solve, ImplicitEuler, Trapezoid, ABDF2
 
-=#
-##include("integrators/Wilhelm2019.jl")
-
-end # module
+end
