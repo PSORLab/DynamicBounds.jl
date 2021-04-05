@@ -28,16 +28,6 @@ LohnersFunctor
 HermiteObreschkoffFunctor
 ```
 
-### Storage and Access functions for Preconditioners
-```@docs
-qr_stack(nx::Int, steps::Int)
-QRDenseStorage
-QRDenseStorage(nx::Int)
-calculateQ!
-calculateQinv!
-mul_split!
-```
-
 ### Existence and Uniqueness Test Utility Functions
 ```@docs
 improvement_condition
@@ -56,7 +46,6 @@ StepParams
 StepResult{S}
 ContractorStorage{S}
 single_step!
-set_xX!
 set_P!(d::DiscretizeRelax)
 compute_X0!(d::DiscretizeRelax)
 set_Δ!

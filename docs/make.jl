@@ -20,7 +20,8 @@ import DynamicBoundspODEsDiscrete: jetcoeffs!, TaylorFunctor!, JacTaylorFunctor!
 
 makedocs(modules = [DynamicBounds, DynamicBoundsBase, DynamicBoundspODEsIneq, DynamicBoundspODEsDiscrete],
          doctest = false,
-         format = Documenter.HTML(),
+         format = Documenter.HTML(prettyurls = get(ENV, "CI", nothing) == "true",
+                                  collapselevel = 1,),
          authors = "Matthew Wilhelm",
          sitename = "DynamicBounds.jl: Nonlinear Interval Bounds and State Relaxations of Differential Equations",
          pages = ["Introduction" => "index.md",
@@ -31,5 +32,6 @@ makedocs(modules = [DynamicBounds, DynamicBoundsBase, DynamicBoundspODEsIneq, Dy
                   "Contributing to DynamicBounds" => "contributing.md",
                   "References" => "ref.md"]
 )
-
-deploydocs(repo = "github.com/PSORLab/DynamicBounds.jl.git")
+@info "Deploying documentation..."
+deploydocs(repo = "github.com/PSORLab/DynamicBounds.jl.git",
+           push_preview  = true)

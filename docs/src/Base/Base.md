@@ -22,6 +22,10 @@ AbstractPathConstraint
 ConstantStateBounds
 VariableStateBounds
 PolyhedralConstraint
+StateNumber
+ConstantParameterValue
+ParameterNumber
+SupportNumber
 ```
 
 ## Abstract Integrator Types
@@ -58,6 +62,9 @@ Bound{T<:AbstractBoundLoc}
 Relaxation{T<:AbstractBoundLoc}
 Gradient{T<:AbstractBoundLoc}
 Subgradient{T<:AbstractBoundLoc}
+LocalIntegrator
+AttachedProblem
+LocalSensitivityOn
 ```
 
 The following constructors for integrator attributes are given below with `T<:AbstractBoundLoc`. The `TimeIndex` constructor is used to specify that

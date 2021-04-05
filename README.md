@@ -19,7 +19,10 @@ The abstraction layer for DynamicBounds is divided into three major parts. First
 
 ## Integrators available
 
-- *Wilhelm2019*: Provides valid bounds and relaxations of the numerical solutions of systems of ODEs via second-order implicit methods.
+- *DifferentialInequality*: Provides valid bounds and relaxations of the numerical solutions of systems of ODEs via second-order implicit methods.
+- *DiscretizeRelax*: Provides valid bounds and relaxations of the numerical solutions of systems of ODEs via second-order implicit methods.
+  - *Wilhelm2019*: Provides valid bounds and relaxations of the numerical solutions of systems of ODEs via second-order implicit methods.
+  - *Wilhelm2019*: Provides valid bounds and relaxations of the numerical solutions of systems of ODEs via second-order implicit methods.
 
 ## Adding new problems/integrators
 ### Adding new integrators
@@ -30,8 +33,17 @@ The abstraction layer for DynamicBounds is divided into three major parts. First
   - Otherwise, it should be a subtype of abstract subtype of `AbstractDERelaxIntegator` associated with a specific problem form.
 - Extend relax!
 - Extend integrate!
-- Extend support/set/get/get!/getall! for all supported attributes
-
+- Extend the support/set/get/get!/getall! for all supported attributes
+  - Fully extending these functions for each attribute is desirable but also can
+    be a burden. We recommend the following as a minimal extension:
+    - For interval-only methods:
+      - get!(integrator, Value{Nominal}(), value)
+      - get!(integrator, Gradient{Nominal}(), value)
+      - get!(integrator, Gradient{Nominal}(), value)
+    - For relaxation methods:
+      -
+    - set!(integator, Gradient())
+    - set!(integrator, Value{Nominal}())
 - Define new problems by adding a structure `<: AbstractDERelaxProblem`
 - Add a corresponding structure `<: AbstractRelaxationAttribute` to hold the solution information.
 - The extend the support and get functions for all supported attributes
