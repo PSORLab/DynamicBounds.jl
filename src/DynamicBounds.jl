@@ -49,4 +49,6 @@ function DBB.get(m::DBB.AbstractDERelaxProblem, attr::DBB.AbstractRelaxProblemAt
     DBB.get(m, attr, args...)
 end
 
+include("library.jl")
+
 end

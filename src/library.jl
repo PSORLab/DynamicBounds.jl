@@ -7,79 +7,51 @@
 # DynamicBounds.jl
 # A package for compute bounds and relaxations of the solutions of
 # parametric differential equations.
-# See https://github.com/PSORLab/DynamicBoundsBase.jl
+# See https://github.com/PSORLab/DynamicBounds.jl
 #############################################################################
 # src/library.jl
 # A module containing the access functions and library utilities for the
 # library of relaxation problem benchmarks.
 #############################################################################
 
-module pDELib
+export STANDARD_LIBRARY, reinitialize_standard_lib!, fetch_instance
 
-const PROTECTED_LIBS = ["PerezGalvan2017", "Sahlodin2011", "Scott2013",
-                        "Shen2017", "Wilhelm2019"]
+const STANDARD_LIB_PATH = joinpath(@__DIR__(), "library")
+const PROTECTED_LIBS = ["pODEs"]
+
+mutable struct LibraryProblem
+    prob
+    id::Symbol
+    desc::String
+    source::String
+    url::String
+end
 
 const STANDARD_LIBRARY = LibraryProblem[]
 
 function reinitialize_standard_lib!()
     for folder in PROTECTED_LIBS
-        include("")
-        lib_prob = LibraryProblem(prob, id = id, desc = desc, source = source, url = url)
-        push!(pDELib.STANDARD_LIBRARY, lib_prob)
+        for f in readdir(joinpath(STANDARD_LIB_PATH, folder))
+            include(joinpath(STANDARD_LIB_PATH, folder, f))
+            lib_prob = LibraryProblem(prob, id, desc, source, url)
+            push!(STANDARD_LIBRARY, lib_prob)
+        end
     end
 end
 
-pdelib_dir = joinpath(dirname(pathof(DiffEqRelax)), "library", "..")
+pdelib_dir = joinpath(@__DIR__(), "library")
+reinitialize_standard_lib!()
 
 """
-$(TYPEDSIGNATURES)
+    fetch_instance
 """
-function fetch_instance(style::R, instance::S) where {R<:AbstractString, S<:AbstractString}
-    pname = replace(splitdir(instance)[end], Pair(".jl", ""))
-    nakeinstance = replace(instance, Pair(".jl", ""))
-    if isfile(joinpath(minlplib_dir, "instances", "$(nakeinstance).jl"))
-        m = include(joinpath(minlplib_dir, "instances", "$(nakeinstance).jl"))
+function fetch_instance(lib::String, instance::String)
+    simple_instance = replace(instance, Pair(".jl", ""))
+    if isfile(joinpath(pdelib_dir, lib, "$(simple_instance).jl"))
+        include(joinpath(pdelib_dir, lib, "$(simple_instance).jl"))
+        return LibraryProblem(prob, id, desc, source, url)
     else
         @warn "No instance detected..."
         return nothing
     end
-    return prob
-end
-
-"""
-$(TYPEDSIGNATURES)
-"""
-function fetch_instance(lib::S, instance::T) where {R<:AbstractString,
-                                                    S<:AbstractString,
-                                                    T<:AbstractString}
-end
-
-"""
-$(TYPEDSIGNATURES)
-"""
-function add_to_lib()
-end
-
-"""
-$(TYPEDSIGNATURES)
-"""
-function remove_from_lib()
-
-    # Library protection
-    if libname in PROTECTED_LIBS
-        error("Cannot remote instances from protected libraries $(libname)")
-        return
-    end
-
-    # Finding instance
-    if !isfile(joinpath(pdelib_dir, libname, "$(pname).jl"))
-        @warn "No instances detected to remove."
-        return
-    end
-
-    # Removing instance
-    @warn "Removing instance $(pname) from library $(libname)"
-    rm(joinpath(pdelib_dir, libname, "$(pname).jl"))
-
-    return
 end

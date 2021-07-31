@@ -180,7 +180,9 @@ end
 end
 
 @testset "pODEs Library Utilities" begin
-end
-
-@testset "Differential Inequality" begin
+    prob = fetch_instance("pODEs", "Sahlodin2011b")
+    @test prob.id == :Sahlodin2011b
+    @test prob.desc == "Lotka-Volterra, np = 1"
+    @test prob.source == "Sahlodin2011"
+    @test prob.url == "https://www.sciencedirect.com/science/article/abs/pii/S0168927411000316"
 end

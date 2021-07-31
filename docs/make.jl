@@ -29,7 +29,9 @@ makedocs(modules = [DynamicBounds, DynamicBoundsBase, DynamicBoundspODEsIneq, Dy
                   "DynamicsBoundsBase, An extendable abstraction layer" => "Base/Base.md",
                   "Discrete-Time Differential Relaxations" => "pODEsDiscrete/pODEsDiscrete.md",
                   "Continuous-Time Differential Relaxations" => "pODEsIneq/pODEsIneq.md",
-                  "Contributing to DynamicBounds" => "contributing.md",
+                  "Contributing to DynamicBounds" => Any["Contributing/contributing.md",
+                                                         "Contributing/add_problem.md",
+                                                         "Contributing/add_integrator.md"],
                   "References" => "ref.md"]
 )
 @info "Deploying documentation..."

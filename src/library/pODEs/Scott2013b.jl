@@ -8,7 +8,7 @@ ScottA2013b_x0(p::Vector{T}) where T = [1.53*10^(-4)*one(T); 0.4*one(T); zero(T)
                                         zero(T); zero(T); zero(T)]
 function ScottA2013b_f!(du::Vector{T}, u::Vector{T}, p::Vector{T}, t) where T
 
-    k = T[53.0*one(T); p[1]; p[2]; p[3], 1200.0*one(T)]
+    k = T[53.0*one(T); p[1]; p[2]; p[3]; 1200.0*one(T)]
     K2 = 2081.0
     K3 = 4162.0
 

@@ -11,7 +11,7 @@ function Sahlodin2011b_f!(du::Vector{T}, u::Vector{T}, p::Vector{T}, t) where T
 end
 tspan = (0.0, 2.0)
 
-prob = ODERelaxProb(Sahlodin2011b_f!, tspan, Sahlodin2011b_x0, pL, pU)
+prob = DBB.ODERelaxProb(Sahlodin2011b_f!, tspan, Sahlodin2011b_x0, pL, pU)
 url = "https://www.sciencedirect.com/science/article/abs/pii/S0168927411000316"
 source = "Sahlodin2011"
 desc = "Lotka-Volterra, np = 1"

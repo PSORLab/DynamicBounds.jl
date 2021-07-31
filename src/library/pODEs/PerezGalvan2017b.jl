@@ -4,7 +4,7 @@ id = :PerezGalvan2017b
 pL = [2.0; 1.0]
 pU = [6.0; 3.0]
 PerezGalvan2017b_x0(p::Vector{T}) where T = T[one(T); zero(T)]
-function f!(du::Vector{T}, u::Vector{T}, p::Vector{T}, t) where T
+function PerezGalvan2017b_f!(du::Vector{T}, u::Vector{T}, p::Vector{T}, t) where T
     k1 = p[1]
     k1rev = p[2]
     k2 = 2.0
