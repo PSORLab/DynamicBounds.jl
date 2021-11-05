@@ -11,9 +11,9 @@ DynamicBoundspODEsDiscrete = "1c7daff2-9b32-4762-838b-ee2b1e32ee26"
 
 [compat]
 DocStringExtensions = "~0.8"
-DynamicBoundsBase = "0.5.4"
-DynamicBoundspODEsIneq = "~0.5.1"
-DynamicBoundspODEsDiscrete = "~0.1"
+DynamicBoundsBase = "0.5.6"
+DynamicBoundspODEsIneq = "~0.5.3"
+DynamicBoundspODEsDiscrete = "~0.1.1"
 julia = "~1.6"
 
 [extras]
