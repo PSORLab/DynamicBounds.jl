@@ -1,7 +1,7 @@
 name = "DynamicBounds"
 uuid = "734901b1-590a-5f47-85e0-724a0ec3af09"
 authors = ["Matthew Wilhelm <matthew.wilhelm@uconn.edu>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
