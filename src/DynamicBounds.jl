@@ -17,7 +17,7 @@ module DynamicBounds
 
 using DocStringExtensions
 
-include("reexport_using.jl")
+include(joinpath(@__DIR__, "reexportusing.jl"))
 
 @reexport using DynamicBoundsBase: HasStateBounds, HasConstantStateBounds, HasVariableStateBounds,
        HasUserJacobian, ConstantStateBounds, VariableStateBounds,
@@ -49,6 +49,6 @@ function DBB.get(m::DBB.AbstractDERelaxProblem, attr::DBB.AbstractRelaxProblemAt
     DBB.get(m, attr, args...)
 end
 
-include("library.jl")
+include(joinpath(@__DIR__, "library.jl"))
 
 end

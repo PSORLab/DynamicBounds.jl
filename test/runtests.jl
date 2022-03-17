@@ -134,11 +134,9 @@ end
 
 @testset "pODE Problem" begin
 
-    x0(p) = [0.5; 0.4]
-    xL(t) = t
-    xU(t) = 3*t.^2
+    x0_ex1(p) = [0.5; 0.4]
 
-    function f(du,u,p,t)
+    function f_ex1(du,u,p,t)
         du[1] = u[1]*p[1]
         du[2] = u[2]*p[2]
         return
@@ -158,7 +156,7 @@ end
     tspan = (0.0,10.0)
     tsupports = [i for i in 0:0.25:10]
 
-    ode_prob1 = @test_nowarn DEqR.ODERelaxProb(f, tspan, x0, pL, pU)
+    ode_prob1 = @test_nowarn DEqR.ODERelaxProb(f_ex1, tspan, x0_ex1, pL, pU)
 
     out = zeros(Float64, 2)
     jout = zeros(Float64, 2, 2)

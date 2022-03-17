@@ -1,7 +1,7 @@
 name = "DynamicBounds"
 uuid = "734901b1-590a-5f47-85e0-724a0ec3af09"
 authors = ["Matthew Wilhelm <matthew.wilhelm@uconn.edu>"]
-version = "0.1.0"
+version = "0.2"
 
 [deps]
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
@@ -11,10 +11,10 @@ DynamicBoundspODEsDiscrete = "1c7daff2-9b32-4762-838b-ee2b1e32ee26"
 
 [compat]
 DocStringExtensions = "~0.8"
-DynamicBoundsBase = "0.5.6"
-DynamicBoundspODEsIneq = "~0.5.3"
-DynamicBoundspODEsDiscrete = "~0.1.1"
-julia = "~1.6"
+DynamicBoundsBase = "~0.7"
+DynamicBoundspODEsIneq = "~0.6"
+DynamicBoundspODEsDiscrete = "~0.2"
+julia = "~1.6, ~1.7"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
